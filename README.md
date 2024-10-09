@@ -1,66 +1,86 @@
-## Foundry
+# Foundry Fund Me
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+- [Foundry Fund Me](#foundry-fund-me)
+- [Getting Started](#getting-started)
+  - [Requirements](#requirements)
+  - [Quickstart](#quickstart)
+- [Usage](#usage)
+  - [Deploy](#deploy)
+  - [Testing](#testing)
+    - [Test Coverage](#test-coverage)
+  - [Estimate gas](#estimate-gas)
+- [Formatting](#formatting)
+- [Thank you!](#thank-you)
 
-Foundry consists of:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+# Getting Started
 
-## Documentation
+## Requirements
 
-https://book.getfoundry.sh/
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  - You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
+- [foundry](https://getfoundry.sh/)
+  - You'll know you did it right if you can run `forge --version` and you see a response like `forge 0.2.0 (816e00b 2023-03-16T00:05:26.396218Z)`
 
-## Usage
 
-### Build
+## Quickstart
 
-```shell
-$ forge build
+```
+git clone https://github.com/Cyfrin/foundry-fund-me-cu
+cd foundry-fund-me-cu
+make
+```
+# Usage
+
+## Deploy
+
+```
+forge script script/DeployFundMe.s.sol
 ```
 
-### Test
+## Testing
 
-```shell
-$ forge test
+```
+forge test
+```
+or
+
+"forge test -m testFunctionName" is deprecated. Please use 
+
+```
+forge test --match-test testFunctionName
 ```
 
-### Format
+or
 
-```shell
-$ forge fmt
+```
+forge test --fork-url $SEPOLIA_RPC_URL
 ```
 
-### Gas Snapshots
+### Test Coverage
 
-```shell
-$ forge snapshot
+```
+forge coverage
 ```
 
-### Anvil
+## Estimate gas
 
-```shell
-$ anvil
+You can estimate how much gas things cost by running:
+
+```
+forge snapshot
 ```
 
-### Deploy
+And you'll see an output file called `.gas-snapshot`
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+
+# Formatting
+
+
+To run code formatting:
 ```
+forge fmt
+```  
 
-### Cast
+# Thank you!
 
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
