@@ -1,6 +1,7 @@
 # Foundry Fund Me
 
 - [Foundry Fund Me](#foundry-fund-me)
+- [About](About)
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
   - [Quickstart](#quickstart)
@@ -12,6 +13,9 @@
 - [Formatting](#formatting)
 - [Thank you!](#thank-you)
 
+# About
+
+This is a simple crowdfunding project, built with #foundry.It fetches realtime ETH/USD price from chainlink oracles and contains functions for sending money to the contract(fundme) and withdraw money from the contract(withdraw), while keeping track of the list of funders and their funding amounts.
 
 # Getting Started
 
@@ -26,8 +30,8 @@
 ## Quickstart
 
 ```
-git clone https://github.com/Cyfrin/foundry-fund-me-cu
-cd foundry-fund-me-cu
+git clone https://github.com/MihaiHng/foundry-fund-me-f24-.git
+cd foundry-fund-me-f24-
 make
 ```
 # Usage
